@@ -1,9 +1,9 @@
 
 #coding = UTF-8
 
-from exerciseOne import exerciseOne
-from exerciseTwo import exerciseTwo
-from exerciseThree import exerciseThree
+from Simple import Simple
+from Matriz import Matriz
+from Clases import Circulo
 
 """ Este modulo es el principal donde
     se aloja el menu de opciones para 
@@ -29,6 +29,7 @@ class Menu():
            return False
 
     def MesajePrincipal(self):
+        #Muestra el menu de opciones para que el usuario seleccione
         print('-------------------- Menu principal -----------------------')
         print('------------- Ingrese 1 para el Ejercico 1 ---------')
         print('------------- Ingrese 2 para el Ejercico 2 ---------')
@@ -39,11 +40,11 @@ class Menu():
         res = self.getValidationOption(op)
         if res:
             if res == 1:
-                obj = exerciseOne()
+                obj = Simple()
             elif res == 2:
-                obj = exerciseTwo()
+                obj = Matriz()
             else:
-                obj = exerciseThree()
+                obj = Circulo()
             obj
         else:
             print('###############################################')

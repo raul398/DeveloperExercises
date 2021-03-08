@@ -1,7 +1,15 @@
 
 #coding = UTF-8
 
-class exerciseOne():
+#Simple
+
+#Hacer una función que genere una lista de diccionarios que contengan id y edad,
+#donde edad sea un número aleatorio entre 1 y 100 y la longitud de la lista sea de 10 elementos. 
+#retornar la lista.
+#Hacer otra función que reciba lo generado en la primer función y ordenarlo de mayor a menor. 
+#Printear el id de la persona más joven y más vieja. Devolver la lista ordenada.
+
+class Simple():
 
     def __init__(self):
         self.row = 0
@@ -14,7 +22,7 @@ class exerciseOne():
         print('USTED ESTA EN EL EJERCICIO UNO')
         print('POR FAVOR INGRESE DE 10 EDADES (UNA POR VEZ)')
         print(' ')
-        while self.row < 3:
+        while self.row < 10:
             self.row += 1
             edad = input('Ingrese edad: ')
             edad = self.getValidateInput(edad)
