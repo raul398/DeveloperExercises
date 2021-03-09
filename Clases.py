@@ -15,10 +15,69 @@
 
 class Circulo():
 
-    def __init__(self):
-        self.getValue()
+	exit = False
+	pi = 3.14
 
-    def getValue(self):
-        print('ESTA ES LA FUNCION DEL EJECICIO TRES')
+	def __init__(self):
+		self.radio = 0
+		self.Diametro = 0
+		self.getValue()
+		if not self.exit:
+			self.initProcess()
+
+	def initProcess(self):
+		self.getArea()
+		self.getPerimeter()
+		self.getMatriz()
+		self.getExchageradio()
+
+	def getValue(self):
+		print(' ')
+		print('USTED ESTA EN EL EJERCICIO TRES')
+		print('POR FAVOR INGRESE EL VALOR DEL RADIO')
+		print('SINO INGRESE SALIR PARA TERMINAR')
+		print(' ')
+		radio = input('Ingrese radio: ') #Toma el valor ingresado
+		if radio.upper() == 'SALIR':
+			print('*****************************************')
+			print('*************  HASTA LUEGO  *************')
+			print('*****************************************\n')
+			self.exit = True
+		else:
+			radio = self.getValidateInput(radio) #Valida que el ingreso sea un numero entero
+			if not radio:
+				self.getValue()
+			else:
+				self.radio = radio
+				self.Diametro = self.radio * 2 
+
+	def getValidateInput(self, value):
+		if not value or value <= '0':
+			print('*************  DEBE INGRESAR EL VALOR MAYOR A CERO  *************\n')
+			return False
+		try:
+			value = int(value)
+			return value
+		except ValueError:
+			print('*************  DEBE INGRESAR EL VALOR EN NUMEROS  *************\n')
+			return False
 
 
+
+	def getArea(self):
+		area = (self.radio ** 2) * self.pi
+		print('El area del circulo es: %s \n' %area)
+
+	def getPerimeter(self):
+		diametro = self.Diametro * self.pi 
+		print('El diametro del circulo es: %s \n' %diametro)
+
+	def getMatriz(self):
+		var = 0
+		Matrix = [[var for e in range(self.Diametro)] for e in range(self.Diametro)]
+		for row in Matrix:
+			print(row)
+
+	def getExchageradio(self):
+		print('¿DESEA INGRESAR UNNUEVO VALOR PARA EL RADIO?')
+		self.getValue()
