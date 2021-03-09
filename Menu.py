@@ -28,6 +28,14 @@ class Menu():
         else:
            return False
 
+    def getValidateInput(self, op):
+        try:
+            op = int(op)
+            return op
+        except ValueError:
+            print('*************  DEBE INGRESAR EL VALOR EN NUMEROS ENTEROS  *************\n')
+            return False
+
     def MesajePrincipal(self):
         #Muestra el menu de opciones para que el usuario seleccione
         print('-------------------- Menu principal -----------------------')
@@ -37,19 +45,21 @@ class Menu():
         print('---------------- Ingrese 4 para salir --------------')
         print('------------------------------------------------------------\n')
         op = int(input('Seleccione una opcion para el ejercicio deseado: '))
-        res = self.getValidationOption(op)
-        if res:
-            if res == 1:
-                obj = Simple()
-            elif res == 2:
-                obj = Matriz()
+        op = self.getValidateInput(op)
+        if op:
+            res = self.getValidationOption(op)
+            if res:
+                if res == 1:
+                    obj = Simple()
+                elif res == 2:
+                    obj = Matriz()
+                else:
+                    obj = Circulo()
+                obj
             else:
-                obj = Circulo()
-            obj
-        else:
-            print('###############################################')
-            print('####### debe ingresar una opcion valida #######')
-            print('###############################################')
+                print('###############################################')
+                print('####### debe ingresar una opcion valida #######')
+                print('###############################################')
         self.MesajePrincipal()
 
 
