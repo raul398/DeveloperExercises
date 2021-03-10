@@ -3,7 +3,7 @@
 
 from Simple import Simple
 from Matriz import Matriz
-from Clases import Circulo
+from Clases import Clases
 
 """ Este modulo es el principal donde
     se aloja el menu de opciones para 
@@ -38,6 +38,7 @@ class Menu():
 
     def MesajePrincipal(self):
         #Muestra el menu de opciones para que el usuario seleccione
+        print(' ')
         print('-------------------- Menu principal -----------------------')
         print('------------- Ingrese 1 para el Ejercico 1 ---------')
         print('------------- Ingrese 2 para el Ejercico 2 ---------')
@@ -54,7 +55,7 @@ class Menu():
                 elif res == 2:
                     obj = Matriz()
                 else:
-                    obj = Circulo()
+                    obj = Clases()
                 obj
             else:
                 print('###############################################')

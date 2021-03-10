@@ -12,6 +12,8 @@
 class Simple():
 
 	def __init__(self):
+		print(' ')
+		print('USTED ESTA EN EL EJERCICIO UNO')
 		self.row = 0
 		self.Lista_Edad = list()
 		le = self.getValue()
@@ -20,7 +22,6 @@ class Simple():
 	def getValue(self):
 		edad = None
 		print(' ')
-		print('USTED ESTA EN EL EJERCICIO UNO')
 		print('POR FAVOR INGRESE DE 10 EDADES (UNA POR VEZ)')
 		print(' ')
 		while self.row < 10:

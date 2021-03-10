@@ -11,13 +11,14 @@ import random
 class Matriz():
 
 	def __init__(self):
+		print(' ')
+		print('USTED ESTA EN EL EJERCICIO DOS')
 		Matrix = self.getMatrix()
 		dic = self.getCoincidences(Matrix)
 		self.getFourCoincidences(dic)
 
 	def getMatrix(self):
 		print(' ')
-		print('USTED ESTA EN EL EJERCICIO DOS')
 		print('SE GENERA UNA MATRIZ DE 5 X 5')
 		print(' ')
 		#Se crea la matriz de 5x5

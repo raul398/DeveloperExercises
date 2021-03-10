@@ -13,27 +13,16 @@
 #Permitir la multiplicación del circulo: Circulo * n debe devolver un nuevo objeto 
 #con el radio multiplicado por n. No permitir la multiplicación por números <= 0
 
-class Circulo():
-
-	exit = False
-	pi = 3.14
+class Clases():
 
 	def __init__(self):
-		self.radio = 0
-		self.Diametro = 0
+		print(' ')
+		print('USTED ESTA EN EL EJERCICIO TRES')
 		self.getValue()
-		if not self.exit:
-			self.initProcess()
-
-	def initProcess(self):
-		self.getArea()
-		self.getPerimeter()
-		self.getMatriz()
-		self.getExchageradio()
+			
 
 	def getValue(self):
 		print(' ')
-		print('USTED ESTA EN EL EJERCICIO TRES')
 		print('POR FAVOR INGRESE EL VALOR DEL RADIO')
 		print('SINO INGRESE SALIR PARA TERMINAR')
 		print(' ')
@@ -42,27 +31,40 @@ class Circulo():
 			print('*****************************************')
 			print('*************  HASTA LUEGO  *************')
 			print('*****************************************\n')
-			self.exit = True
+			return False
 		else:
 			radio = self.getValidateInput(radio) #Valida que el ingreso sea un numero entero
 			if not radio:
 				self.getValue()
 			else:
-				self.radio = radio
-				self.Diametro = self.radio * 2 
+				obj = Círculo(radio)
+				return obj
 
 	def getValidateInput(self, value):
-		if not value or value <= '0':
-			print('*************  DEBE INGRESAR EL VALOR MAYOR A CERO  *************\n')
-			return False
 		try:
 			value = int(value)
+			if value <= 0:
+				print('*************  DEBE INGRESAR EL VALOR MAYOR A CERO  *************\n')
+				return False
 			return value
-		except ValueError:
+		except TypeError:
 			print('*************  DEBE INGRESAR EL VALOR EN NUMEROS  *************\n')
 			return False
 
+class Círculo(Clases):
 
+	pi = 3.14
+
+	def __init__(self, radio):
+		self.radio = radio
+		self.Diametro = self.radio * 2 
+		self.initProcess()
+
+	def initProcess(self):
+		self.getArea()
+		self.getPerimeter()
+		self.getMatriz()
+		self.getExchageradio()
 
 	def getArea(self):
 		area = (self.radio ** 2) * self.pi
@@ -77,7 +79,9 @@ class Circulo():
 		Matrix = [[var for e in range(self.Diametro)] for e in range(self.Diametro)]
 		for row in Matrix:
 			print(row)
+		print(' ')
 
 	def getExchageradio(self):
-		print('¿DESEA INGRESAR UNNUEVO VALOR PARA EL RADIO?')
+		print('¿DESEA INGRESAR UN NUEVO VALOR PARA EL RADIO?')
 		self.getValue()
+
