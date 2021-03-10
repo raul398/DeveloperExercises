@@ -58,12 +58,13 @@ class Círculo(Clases):
 	def __init__(self, radio):
 		self.radio = radio
 		self.Diametro = self.radio * 2 
+		self.Perimeter = 0
 		self.initProcess()
 
 	def initProcess(self):
 		self.getArea()
 		self.getPerimeter()
-		self.getMatriz()
+		self.getPrintCircle()
 		self.getExchageradio()
 
 	def getArea(self):
@@ -71,15 +72,26 @@ class Círculo(Clases):
 		print('El area del circulo es: %s \n' %area)
 
 	def getPerimeter(self):
-		diametro = self.Diametro * self.pi 
-		print('El diametro del circulo es: %s \n' %diametro)
+		self.Perimeter = self.Diametro * self.pi 
+		print('El diametro del circulo es: %s \n' %self.Perimeter)
 
-	def getMatriz(self):
+	def getPrintCircle(self):
+
+		self.printCircle(self.Diametro, self.Diametro, self.radio, self.Perimeter)
 		var = 0
 		Matrix = [[var for e in range(self.Diametro)] for e in range(self.Diametro)]
 		for row in Matrix:
 			print(row)
 		print(' ')
+
+
+	def printCircle(self, x, y, radio, perimeter):
+		import turtle as t
+
+		t.penup()
+		t.goto(x, y - radio)  
+		t.pendown()
+		t.circle(radio)
 
 	def getExchageradio(self):
 		print('¿DESEA INGRESAR UN NUEVO VALOR PARA EL RADIO?')
