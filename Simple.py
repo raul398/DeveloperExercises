@@ -47,7 +47,7 @@ class Simple():
 		try:
 			edad = int(edad)
 			return edad
-		except ValueError:
+		except TypeError:
 			self.row -= 1
 			print('*************  DEBE INGRESAR EL VALOR EN NUMEROS ENTEROS  *************\n')
 			return False
