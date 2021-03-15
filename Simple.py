@@ -35,6 +35,7 @@ class Simple():
 				#se agrega como elemento de la lista key-->id y value --> edad
 				self.Lista_Edad.append({self.row : edad})
 			else:
+				self.row -= 1
 				print('******  El rango de edad debe ser de 1 a 100  ******')
 				self.getValue()
 		return self.Lista_Edad
